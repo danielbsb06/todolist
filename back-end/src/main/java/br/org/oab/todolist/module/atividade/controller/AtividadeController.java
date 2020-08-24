@@ -22,7 +22,14 @@ public class AtividadeController {
 
     @PostMapping
     public ResponseEntity<AtividadeDTO> incluir(@RequestBody AtividadeDTO atividadeDTO) {
-        return ResponseEntity.ok(atividadeService.incluir(atividadeDTO));
+        return ResponseEntity.ok(atividadeService.salvar(atividadeDTO));
     }
+
+    @PostMapping("/{id}")
+    public ResponseEntity<AtividadeDTO> alterar(@RequestBody AtividadeDTO atividadeDTO, @PathVariable("id") Long id) {
+        atividadeDTO.setId(id);
+        return ResponseEntity.ok(atividadeService.salvar(atividadeDTO));
+    }
+
 
 }

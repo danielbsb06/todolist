@@ -1,4 +1,4 @@
-package br.org.oab.todolist.common.service.mapper;
+package br.org.oab.todolist.common.mapper;
 
 import java.util.List;
 

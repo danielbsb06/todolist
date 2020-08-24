@@ -3,7 +3,7 @@ import { Injector } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { BaseModel } from '../model/base.model';
+import { BaseModel } from '../model/abstract/base.model';
 
 
 export abstract class BaseService<T extends BaseModel> {

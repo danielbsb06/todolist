@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { AtividadeService } from '../atividade.service';
 
 @Component({
   selector: 'app-atividade-form',
@@ -11,7 +12,8 @@ export class AtividadeFormComponent implements OnInit {
   private form: FormGroup;
   private listaAtividades = [];
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              protected atividadeService: AtividadeService) { }
 
   ngOnInit() {
     this.construirForm();
@@ -24,8 +26,11 @@ export class AtividadeFormComponent implements OnInit {
   }
 
   incluir(){
-    this.listaAtividades.push(this.form.value);
-    this.form.reset();
+    //this.listaAtividades.push(this.form.value);
+    this.atividadeService.create(this.form.value).subscribe(response => {
+      console.log(response);
+      this.form.reset();
+    });
   }
 
 }

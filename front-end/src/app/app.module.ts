@@ -1,13 +1,15 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, CommonModule } from '@angular/common';
 import localeBr from '@angular/common/locales/pt';
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { AtividadeComponent } from './modules/atividade/atividade.component';
+import { AtividadeModule } from './modules/atividade/atividade.module';
 
 registerLocaleData(localeBr);
 
@@ -16,10 +18,10 @@ registerLocaleData(localeBr);
     AppComponent
   ],
   imports: [
-    SharedModule,
     BrowserModule, 
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AtividadeModule
   ],
   providers: [
     {

@@ -3,9 +3,11 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 
 import {LOCALE_ID} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
     imports: [
+        BrowserModule, 
         CommonModule,
         ReactiveFormsModule,    
     ],
@@ -15,6 +17,7 @@ import {LOCALE_ID} from '@angular/core';
         {provide: LOCALE_ID,useValue: "pt-BR"}
     ],
     exports: [
+        BrowserModule,
         CommonModule,
         ReactiveFormsModule
     ]

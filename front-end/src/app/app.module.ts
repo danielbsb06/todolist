@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AtividadeComponent } from './modules/atividade/atividade.component';
 import { AtividadeModule } from './modules/atividade/atividade.module';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localeBr);
 
@@ -21,7 +22,8 @@ registerLocaleData(localeBr);
     BrowserModule, 
     BrowserAnimationsModule,
     AppRoutingModule,
-    AtividadeModule
+    AtividadeModule,
+    HttpClientModule,
   ],
   providers: [
     {

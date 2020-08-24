@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
+import { AtividadeService } from '../atividade.service';
 
 @Component({
   selector: 'app-atividade-list',
@@ -11,9 +10,12 @@ export class AtividadeListComponent implements OnInit {
 
   private listaAtividades = [];
 
-  constructor() { }
+  constructor(protected atividadeService: AtividadeService) { }
 
   ngOnInit() {
+    this.atividadeService.getAll().subscribe(atividades => {
+      this.listaAtividades =  atividades;
+    });
   }
 
   excluir(atividade){

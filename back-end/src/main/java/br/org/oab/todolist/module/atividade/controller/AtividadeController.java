@@ -25,11 +25,15 @@ public class AtividadeController {
         return ResponseEntity.ok(atividadeService.salvar(atividadeDTO));
     }
 
-    @PostMapping("/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<AtividadeDTO> alterar(@RequestBody AtividadeDTO atividadeDTO, @PathVariable("id") Long id) {
         atividadeDTO.setId(id);
         return ResponseEntity.ok(atividadeService.salvar(atividadeDTO));
     }
 
+    @DeleteMapping("/{id}")
+    public void excluir(@PathVariable("id") Long id) {
+        atividadeService.excluir(AtividadeDTO.builder().id(id).build());
+    }
 
 }

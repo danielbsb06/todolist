@@ -25,4 +25,8 @@ public class AtividadeService {
     public AtividadeDTO salvar(AtividadeDTO atividadeDTO) {
         return atividadeMapper.toDto(atividadeRepository.save(atividadeMapper.toEntity(atividadeDTO)));
     }
+
+    public void excluir(AtividadeDTO atividadeDTO) {
+        atividadeRepository.delete(atividadeMapper.toEntity(atividadeDTO));
+    }
 }

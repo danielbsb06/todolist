@@ -6,6 +6,7 @@ import br.org.oab.todolist.module.atividade.dto.AtividadeDTO;
 import br.org.oab.todolist.module.atividade.mapper.AtividadeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

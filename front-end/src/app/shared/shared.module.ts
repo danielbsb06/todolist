@@ -7,6 +7,8 @@ import {InputTextModule} from 'primeng/inputtext';
 import {FieldsetModule} from 'primeng/fieldset';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
+import { ConfirmationService } from 'primeng/components/common/confirmationservice';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @NgModule({
     imports: [
@@ -22,7 +24,10 @@ import {TableModule} from 'primeng/table';
     declarations: [
     ],
     providers: [
-        {provide: LOCALE_ID,useValue: "pt-BR"}
+        {provide: LOCALE_ID,useValue: "pt-BR"},
+        MessageService,
+        ConfirmationService
+
     ],
     exports: [
         BrowserModule, 

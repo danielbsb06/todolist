@@ -29,7 +29,7 @@ registerLocaleData(localeBr);
     {
       provide: LOCALE_ID,
       useValue: 'pt-BR',
-  },
+    }
   ],
   bootstrap: [AppComponent]
 })

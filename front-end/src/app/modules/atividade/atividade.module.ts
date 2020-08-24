@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { AtividadeListComponent } from './atividade-list/atividade-list.component';
 import { AtividadeComponent } from './atividade.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { CommonModule } from '@angular/common';
 import { AtividadeFormComponent } from './atividade-form/atividade-form.component';
 
 
@@ -13,10 +12,12 @@ import { AtividadeFormComponent } from './atividade-form/atividade-form.componen
     AtividadeFormComponent
   ],
   imports: [
-    SharedModule,
+    SharedModule
   ],
   exports: [
     AtividadeComponent
+  ],
+  providers:[
   ]
 })
 export class AtividadeModule { }

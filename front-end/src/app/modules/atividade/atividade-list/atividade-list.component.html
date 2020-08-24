@@ -1,29 +1,27 @@
-<p-fieldset legend="To Do List">
-    <p-table [value]="listaAtividades">
-        <ng-template pTemplate="header">
-            <tr>
-                <th>Atividade</th>
-                <th style="width: 100px;"></th>
-            </tr>      
-        </ng-template>
-        <ng-template pTemplate="body" let-atividade>
-            <tr>
-                <td>{{ atividade.titulo }}</td>
-                <td>
-                    <a  
-                        title="Editar" 
-                        icon="pi pi-pencil" 
-                        class="pi pi-pencil button"    
-                        style="color:#061da2" 
-                        (click)="editar(atividade)">
-                    </a> 
-                    <a  
-                        title="Excluir" 
-                        style="color:#a20606;"
-                        class="pi pi-times button"    
-                        (click)="callDialogDelete('Deseja realmente excluir esta atividade?',atividade)">
-                    </a>
-            </tr>
-        </ng-template>
-    </p-table>
-</p-fieldset>
+<p-table [value]="listaAtividades">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Atividade</th>
+            <th style="width: 80px;">Ação</th>
+        </tr>      
+    </ng-template>
+    <ng-template pTemplate="body" let-atividade>
+        <tr>
+            <td>{{ atividade.titulo }}</td>
+            <td>
+                <a  
+                    title="Editar" 
+                    icon="pi pi-pencil" 
+                    class="pi pi-pencil button"    
+                    style="color:#061da2" 
+                    (click)="editar(atividade)">
+                </a> 
+                <a  
+                    title="Excluir" 
+                    style="color:#a20606;"
+                    class="pi pi-times button"    
+                    (click)="callDialogDelete('Deseja realmente excluir esta atividade?',atividade)">
+                </a>
+        </tr>
+    </ng-template>
+</p-table>

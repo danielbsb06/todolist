@@ -1,0 +1,8 @@
+<form [formGroup]="form" class="ui-g">
+    <div class="ui-g-12 ui-md-11">
+        <input pInputText type="text" formControlName="titulo" placeholder="Atividade"/>
+    </div>    
+    <div class="ui-g-12 ui-md-1" style="align-self: flex-end;">
+        <p-button (onClick)="incluir()" label="Incluir" title="Incluir Atividade" [disabled]="form.invalid"></p-button>
+    </div>
+</form>

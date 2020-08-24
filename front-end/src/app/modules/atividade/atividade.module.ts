@@ -3,12 +3,14 @@ import { AtividadeListComponent } from './atividade-list/atividade-list.componen
 import { AtividadeComponent } from './atividade.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CommonModule } from '@angular/common';
+import { AtividadeFormComponent } from './atividade-form/atividade-form.component';
 
 
 @NgModule({
   declarations: [
     AtividadeComponent,
-    AtividadeListComponent
+    AtividadeListComponent,
+    AtividadeFormComponent
   ],
   imports: [
     SharedModule,

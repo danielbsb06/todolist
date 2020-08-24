@@ -9,19 +9,13 @@
         <tr>
             <td>{{ atividade.titulo }}</td>
             <td>
-                <a  
-                    title="Editar" 
-                    icon="pi pi-pencil" 
-                    class="pi pi-pencil button"    
-                    style="color:#061da2" 
-                    (click)="editar(atividade)">
+                <a title="Editar" icon="pi pi-pencil" class="pi pi-pencil button" style="color:#061da2" 
+                    (click)="selecionar(atividade)">
                 </a> 
-                <a  
-                    title="Excluir" 
-                    style="color:#a20606;"
-                    class="pi pi-times button"    
+                <a title="Excluir" style="color:#a20606;" class="pi pi-times button"    
                     (click)="excluir(atividade)">
                 </a>
+            </td>
         </tr>
     </ng-template>
 </p-table>

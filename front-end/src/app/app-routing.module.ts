@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ListComponent } from './modules/todo/list/list.component';
 
 
 
 const routes: Routes = [
   {
       path: '',
-      component: AdminLayoutComponent,
+      component: ListComponent,
       children: [
           {
               path: '',
-              loadChildren: './feature/home/home.module#HomeModule'
+              loadChildren: './modules/todo/todo.module#TodoModule'
           }
       ]
   }

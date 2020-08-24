@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AtividadeService } from '../atividade.service';
 import { ConfirmationService } from 'primeng/components/common/confirmationservice';
 
@@ -9,39 +9,15 @@ import { ConfirmationService } from 'primeng/components/common/confirmationservi
 })
 export class AtividadeListComponent implements OnInit {
 
-  private listaAtividades = [];
+  @Input() listaAtividades = [];
+  @Output() excluirEvent = new EventEmitter()
 
-  constructor(protected atividadeService: AtividadeService,
-              protected confirmationService: ConfirmationService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.atividadeService.getAll().subscribe(atividades => {
-      this.listaAtividades =  atividades;
-    });
   }
-
-
 
   private excluir = (param) => {
-    this.atividadeService.delete(param.id).subscribe();
-  }
-
-
-  abrirModalConfirmacao(param, funcao, mensagem: string, funcaoReject?) {
-    this.confirmationService.confirm({
-        message: mensagem,
-        acceptLabel: "Sim",
-        rejectLabel: "Não",
-        accept: () => {
-            setTimeout(() => {
-               funcao(param);
-            }, 1000);
-        },
-        reject: () => {
-            setTimeout(() => {
-                funcaoReject(param);
-            }, 1000);
-      },
-    });
+    this.excluirEvent.emit(param);
   }
 }

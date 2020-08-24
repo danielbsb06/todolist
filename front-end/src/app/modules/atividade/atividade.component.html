@@ -1,9 +1,9 @@
 <p-fieldset legend="To Do List">
-<div class="content">
-    <div class="ui-g ui-fluid">
-        <div class="ui-g-12 ui-md-12">
-            <app-atividade-form></app-atividade-form>
-                <app-atividade-list></app-atividade-list>
+    <div class="content">
+        <div class="ui-g ui-fluid">
+            <div class="ui-g-12 ui-md-12">
+                <app-atividade-form (incluirEvent)="incluirEvent($event)"></app-atividade-form>
+                <app-atividade-list [listaAtividades]="listaAtividades" (excluirEvent)="excluirEvent($event)"></app-atividade-list>
             </div>
         </div>
     </div>

@@ -22,4 +22,7 @@ public class AtividadeService {
         return atividadeMapper.toDto((List<Atividade>) atividadeRepository.findAll());
     }
 
+    public AtividadeDTO incluir(AtividadeDTO atividadeDTO) {
+        return atividadeMapper.toDto(atividadeRepository.save(atividadeMapper.toEntity(atividadeDTO)));
+    }
 }

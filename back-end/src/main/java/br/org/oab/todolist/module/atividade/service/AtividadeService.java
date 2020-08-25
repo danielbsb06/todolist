@@ -30,6 +30,7 @@ public class AtividadeService {
         return atividadeMapper.toDto(atividadeRepository.save(atividadeMapper.toEntity(atividadeDTO)));
     }
 
+    @CacheEvict(value="atividade",  allEntries = true)
     public void excluir(AtividadeDTO atividadeDTO) {
         atividadeRepository.delete(atividadeMapper.toEntity(atividadeDTO));
     }

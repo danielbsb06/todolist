@@ -2,15 +2,12 @@ package br.org.oab.todolist.module.atividade.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "ATIVIDADE")
+@Entity
 public class Atividade {
 
     @Id
@@ -18,4 +15,7 @@ public class Atividade {
     private Long id;
 
     private String titulo;
+
+    @Column(name = "CONCLUIDO", insertable = false, updatable = false)
+    private Boolean concluido;
 }

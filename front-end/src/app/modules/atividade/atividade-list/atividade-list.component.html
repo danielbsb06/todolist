@@ -2,15 +2,18 @@
     <ng-template pTemplate="header">
         <tr>
             <th>Atividade</th>
-            <th style="width: 80px;">Ação</th>
+            <th style="width: 100px;">Ação</th>
         </tr>      
     </ng-template>
     <ng-template pTemplate="body" let-atividade>
         <tr>
-            <td>{{ atividade.titulo }}</td>
-            <td>
+            <td [ngClass]="{'atividade-concluida': atividade.concluido}">{{ atividade.titulo }}</td>
+            <td style="text-align: center;">
+                <a title="Concluir" icon="pi pi-check" class="pi pi-check button" style="color:#0e550e" 
+                (click)="concluir(atividade)" *ngIf="!atividade.concluido" >
+                </a> 
                 <a title="Editar" icon="pi pi-pencil" class="pi pi-pencil button" style="color:#061da2" 
-                    (click)="selecionar(atividade)">
+                    (click)="editar(atividade)" *ngIf="!atividade.concluido" >
                 </a> 
                 <a title="Excluir" style="color:#a20606;" class="pi pi-times button"    
                     (click)="excluir(atividade)">

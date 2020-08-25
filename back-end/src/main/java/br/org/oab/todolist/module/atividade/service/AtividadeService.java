@@ -34,4 +34,9 @@ public class AtividadeService {
     public void excluir(AtividadeDTO atividadeDTO) {
         atividadeRepository.delete(atividadeMapper.toEntity(atividadeDTO));
     }
+
+    @CacheEvict(value="atividade",  allEntries = true)
+    public void concluirAtividade(Long id) {
+        atividadeRepository.updateConcluidoById(id);
+    }
 }

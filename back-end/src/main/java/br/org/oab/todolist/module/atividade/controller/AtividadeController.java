@@ -36,4 +36,10 @@ public class AtividadeController {
         atividadeService.excluir(AtividadeDTO.builder().id(id).build());
     }
 
+    @PatchMapping("/{id}/concluir")
+    public void concluir(@PathVariable("id") Long id) {
+        atividadeService.concluirAtividade(id);
+    }
+
+
 }

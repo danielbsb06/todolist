@@ -37,8 +37,15 @@ export class AtividadeComponent implements OnInit {
     );
   }
 
-  selecionarAtividadeEvent(param){
+  editarAtividadeEvent(param){
     this.atividadeSelecionada = param;
+  }
+
+  concluirAtividadeEvent(param){
+    this.atividadeService.concluir(param.id).subscribe(response => {
+        this.carregarListaAtividade();
+      }
+    );
   }
 
 }

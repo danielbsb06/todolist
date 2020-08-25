@@ -11,6 +11,5 @@ import java.io.Serializable;
 public class AtividadeDTO implements Serializable {
     private Long id;
     private String titulo;
-
-
+    private Boolean concluido;
 }

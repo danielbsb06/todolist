@@ -3,7 +3,7 @@
         <div class="ui-g ui-fluid">
             <div class="ui-g-12 ui-md-12">
                 <app-atividade-form [atividade]="atividadeSelecionada" (salvarEvent)="salvarAtividadeEvent($event)"></app-atividade-form>
-                <app-atividade-list [listaAtividades]="listaAtividades" (excluirEvent)="excluirAtividadeEvent($event)" (selecionarEvent)="selecionarAtividadeEvent($event)"></app-atividade-list>
+                <app-atividade-list [listaAtividades]="listaAtividades" (excluirEvent)="excluirAtividadeEvent($event)" (editarEvent)="editarAtividadeEvent($event)" (concluirEvent)="concluirAtividadeEvent($event)"></app-atividade-list>
             </div>
         </div>
     </div>

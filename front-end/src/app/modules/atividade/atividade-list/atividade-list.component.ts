@@ -11,7 +11,8 @@ export class AtividadeListComponent implements OnInit {
 
   @Input() listaAtividades = [];
   @Output() excluirEvent = new EventEmitter()
-  @Output() selecionarEvent = new EventEmitter()
+  @Output() editarEvent = new EventEmitter()
+  @Output() concluirEvent = new EventEmitter()
 
   constructor() { }
 
@@ -22,7 +23,11 @@ export class AtividadeListComponent implements OnInit {
     this.excluirEvent.emit(param);
   }
 
-  private selecionar(param) {
-    this.selecionarEvent.emit(param);
+  editar(param) {
+    this.editarEvent.emit(param);
+  }
+
+  concluir(param) {
+    this.concluirEvent.emit(param);
   }
 }

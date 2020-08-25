@@ -1,0 +1,14 @@
+version: '2.0'
+services:
+  angular:
+    build: front-end/.
+    ports:
+    - "4200:4200"
+    links:
+    - spring
+  spring:
+    build: back-end/.
+    ports:
+    - "8081:8081"
+    links:
+    - spring
